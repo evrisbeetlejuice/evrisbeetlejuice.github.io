@@ -11,6 +11,9 @@ body {
 .clear {
 	clear: both;
 }
+.shady_print {
+	display: none;
+}
 #page-wrap {
 	width: 85%;
 	max-width: 1000px;
@@ -42,7 +45,7 @@ h1 {
 }
 h2 {
 	font-size: 20px;
-	margin: 0 0 6px 0;
+	margin: 0 0 15px 0;
 	position: relative;
 }
 h2 span {
@@ -211,4 +214,42 @@ h2 span {
 		float: left;
 		height: 200px;
 	}
+}
+@media print {
+body {
+	color: #333333;
+}
+#page-wrap {
+	width: 95%;
+	height: 100%;
+	padding: 10px;
+}
+#pic {
+	-webkit-box-shadow: none;
+	box-shadow: none;	
+}
+h2 span {
+	position: absolute;
+}
+dl {
+	position: relative;
+	top: -110px;
+}
+dt {
+	text-align: left;
+	page-break-inside: avoid;
+}
+.breakavoid {
+	page-break-inside: avoid;
+}
+.breakbefore {
+	page-break-before: always;
+}
+@page {
+    margin: 0;
+    padding: 0;
+}
+.shady_print {
+	display: initial;
+}
 }
